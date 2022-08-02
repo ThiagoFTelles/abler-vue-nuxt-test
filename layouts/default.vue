@@ -1,0 +1,138 @@
+<template>
+  <div id="app">
+    <TheHeader />
+    <main id="main">
+      <transition mode="out-in">
+        <Nuxt />
+      </transition>
+    </main>
+    <TheFooter />
+  </div>
+</template>
+
+<script>
+import TheHeader from "@/components/TheHeader.vue";
+import TheFooter from "@/components/TheFooter.vue";
+
+export default {
+  components: {
+    TheHeader,
+    TheFooter,
+  },
+};
+</script>
+
+<style>
+@font-face {
+  font-family: Avenir;
+  src: url("../static/fonts/Avenir-Medium.ttf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+ul,
+li,
+h1,
+h2,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+body,
+.btn {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: #345;
+}
+
+a {
+  color: #91549e;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.btn {
+  display: block;
+  padding: 10px 30px;
+  background: #91549e;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(30, 60, 90, 0.2);
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: inset 0 0 100px 100px rgb(0 0 0 / 20%);
+  transform: scale(1.1);
+}
+
+#app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#main {
+  flex: 1;
+}
+
+input {
+  border-radius: 4px;
+  border: 1px solid white;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(30, 60, 90, 0.1);
+  transition: all 0.3s;
+  font-size: 1rem;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  margin-bottom: 15px;
+}
+
+input:hover,
+input:focus {
+  outline: none;
+  box-shadow: 0 6px 12px rgba(30, 60, 90, 0.2);
+  border-color: #91549e;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #91549e;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+.v-enter {
+  transform: translate3d(0, -20px, 0);
+}
+.v-leave-to {
+  transform: translate3d(0, 20px, 0);
+}
+.v-enter,
+.v-leave-to {
+  opacity: 0;
+}
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.3s;
+}
+</style>
